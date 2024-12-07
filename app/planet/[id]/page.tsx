@@ -1,6 +1,5 @@
 import { fetchPlanetById, fetchPerson } from "@/app/lib/api";
 import Link from "next/link";
-import type { Person } from "@/app/lib/types";
 
 interface PageProps {
   params: Promise<{ id: string }>;

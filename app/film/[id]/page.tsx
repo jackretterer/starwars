@@ -14,19 +14,19 @@ export default async function FilmPage({ params }: PageProps) {
     // Fetch all related data in parallel
     const [characters, planets, starships, vehicles] = await Promise.all([
       Promise.all(film.characters.map(url => {
-        const id = url.split('/').filter(Boolean).pop() || '';
-        return fetchPerson(id);
+        const _id = url.split('/').filter(Boolean).pop() || '';
+        return fetchPerson(_id);
       })),
       Promise.all(film.planets.map(url => {
-        const id = url.split('/').filter(Boolean).pop() || '';
-        return fetchPlanetById(id);
+        const _id = url.split('/').filter(Boolean).pop() || '';
+        return fetchPlanetById(_id);
       })),
       Promise.all(film.starships.map(url => {
-        const id = url.split('/').filter(Boolean).pop() || '';
+        const _id = url.split('/').filter(Boolean).pop() || '';
         return fetchStarship(url);
       })),
       Promise.all(film.vehicles.map(url => {
-        const id = url.split('/').filter(Boolean).pop() || '';
+        const _id = url.split('/').filter(Boolean).pop() || '';
         return fetchVehicle(url);
       }))
     ]);
