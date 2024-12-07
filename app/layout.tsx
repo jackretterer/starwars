@@ -5,6 +5,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Star Wars Explorer",
   description: "Explore the Star Wars universe",
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-icon.png',
+    shortcut: '/favicon-16x16.png',
+  },
   openGraph: {
     title: "Star Wars Explorer",
     description: "Explore the Star Wars universe",
