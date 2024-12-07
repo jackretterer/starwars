@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Star Wars Explorer
+
+A modern, responsive web application that provides an interactive interface for exploring the Star Wars universe using the SWAPI (Star Wars API).
+
+![Star Wars Explorer Screenshot]
+[Consider adding a screenshot of your app here]
+
+## Features
+
+- **Character Directory**: Browse and search through Star Wars characters
+- **Detailed Character Profiles**: View comprehensive information about each character including:
+  - Personal details (birth year, physical characteristics)
+  - Home planet information
+  - Associated vehicles and starships
+  - Film appearances
+  - Planet neighbors
+- **Film Details**: Explore Star Wars films with:
+  - Opening crawl
+  - Production details
+  - Complete cast and locations
+  - Related vehicles and starships
+- **Interconnected Data**: Navigate between related characters, planets, vehicles, and starships
+- **Responsive Design**: Optimized for both desktop and mobile devices
+- **Modern UI**: Space-themed, minimalistic design with smooth transitions
+
+## Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: TailwindCSS
+- **Data**: SWAPI (Star Wars API)
+- **Fonts**: Geist Font Family
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/star-wars-explorer.git
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Integration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses the [SWAPI](https://swapi.dev/) (Star Wars API) to fetch data. The API provides information about:
+- Characters
+- Films
+- Planets
+- Starships
+- Vehicles
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+├── components/        # Reusable UI components
+├── lib/              # API utilities and TypeScript types
+├── person/           # Character detail pages
+├── film/             # Film detail pages
+├── planet/           # Planet detail pages
+├── vehicle/          # Vehicle detail pages
+├── starship/         # Starship detail pages
+└── page.tsx          # Home page with character listing
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Acknowledgments
+
+- Data provided by [SWAPI](https://swapi.dev/)
+- Design inspired by modern Star Wars interfaces
+- Built with [Next.js](https://nextjs.org/)
