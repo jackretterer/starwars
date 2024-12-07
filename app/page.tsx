@@ -2,12 +2,13 @@ import { fetchPeople, searchPeople } from "./lib/api";
 import PersonCard from "./components/PersonCard";
 import SearchInput from "./components/SearchInput";
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
-  const query = typeof searchParams.search === 'string' ? searchParams.search : '';
+interface PageProps {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default async function HomePage({ searchParams }: PageProps) {
+  const resolvedSearchParams = await searchParams;
+  const query = typeof resolvedSearchParams.search === 'string' ? resolvedSearchParams.search : '';
   const data = query ? await searchPeople(query) : await fetchPeople();
 
   return (

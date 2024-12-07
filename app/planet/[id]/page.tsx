@@ -2,9 +2,14 @@ import { fetchPlanetById, fetchPerson } from "@/app/lib/api";
 import Link from "next/link";
 import type { Person } from "@/app/lib/types";
 
-export default async function PlanetPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function PlanetPage({ params }: PageProps) {
   try {
-    const planet = await fetchPlanetById(params.id);
+    const resolvedParams = await params;
+    const planet = await fetchPlanetById(resolvedParams.id);
     
     // Fetch all residents in parallel
     const residents = await Promise.all(

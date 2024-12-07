@@ -1,8 +1,13 @@
 import { fetchStarship } from "@/app/lib/api";
 import Link from "next/link";
 
-export default async function StarshipPage({ params }: { params: { id: string } }) {
-  const starship = await fetchStarship(`https://swapi.dev/api/starships/${params.id}/`);
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function StarshipPage({ params }: PageProps) {
+  const resolvedParams = await params;
+  const starship = await fetchStarship(`https://swapi.dev/api/starships/${resolvedParams.id}/`);
 
   return (
     <div className="space-y-8">

@@ -2,9 +2,14 @@ import { fetchFilm, fetchPerson, fetchPlanetById, fetchStarship, fetchVehicle } 
 import Link from "next/link";
 import type { Person, Planet, Starship, Vehicle } from "@/app/lib/types";
 
-export default async function FilmPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function FilmPage({ params }: PageProps) {
   try {
-    const film = await fetchFilm(`https://swapi.dev/api/films/${params.id}/`);
+    const resolvedParams = await params;
+    const film = await fetchFilm(`https://swapi.dev/api/films/${resolvedParams.id}/`);
 
     // Fetch all related data in parallel
     const [characters, planets, starships, vehicles] = await Promise.all([

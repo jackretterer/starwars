@@ -2,9 +2,14 @@ import { fetchPerson, fetchFilm, fetchVehicle, fetchStarship, fetchPlanet } from
 import Link from "next/link";
 import type { Film, Vehicle, Starship } from "@/app/lib/types";
 
-export default async function PersonPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function PersonPage({ params }: PageProps) {
   try {
-    const person = await fetchPerson(params.id);
+    const resolvedParams = await params;
+    const person = await fetchPerson(resolvedParams.id);
     
     // Fetch all data in parallel
     const [films, vehicles, starships, homeworld] = await Promise.all([

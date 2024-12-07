@@ -1,8 +1,13 @@
 import { fetchVehicle } from "@/app/lib/api";
 import Link from "next/link";
 
-export default async function VehiclePage({ params }: { params: { id: string } }) {
-  const vehicle = await fetchVehicle(`https://swapi.dev/api/vehicles/${params.id}/`);
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function VehiclePage({ params }: PageProps) {
+  const resolvedParams = await params;
+  const vehicle = await fetchVehicle(`https://swapi.dev/api/vehicles/${resolvedParams.id}/`);
 
   return (
     <div className="space-y-8">
