@@ -5,6 +5,24 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Star Wars Explorer",
   description: "Explore the Star Wars universe",
+  openGraph: {
+    title: "Star Wars Explorer",
+    description: "Explore the Star Wars universe",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Star Wars Explorer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Star Wars Explorer",
+    description: "Explore the Star Wars universe",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
