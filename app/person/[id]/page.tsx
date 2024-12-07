@@ -149,7 +149,7 @@ export default async function PersonPage({ params }: { params: { id: string } })
         
         <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-8">
           <h1 className="text-xl text-red-400">Error loading character</h1>
-          <p className="text-slate-400">The character you're looking for couldn't be found.</p>
+          <p className="text-slate-400">The character you&apos;re looking for couldn&apos;t be found.</p>
         </div>
       </div>
     );

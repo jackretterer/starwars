@@ -94,7 +94,7 @@ export default async function PlanetPage({ params }: { params: { id: string } })
         
         <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-8">
           <h1 className="text-xl text-red-400">Error loading planet</h1>
-          <p className="text-slate-400">The planet you're looking for couldn't be found.</p>
+          <p className="text-slate-400">The planet you&apos;re looking for couldn&apos;t be found.</p>
         </div>
       </div>
     );

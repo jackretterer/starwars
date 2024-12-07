@@ -36,7 +36,7 @@ A modern, responsive web application that provides an interactive interface for 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/star-wars-explorer.git
+git clone https://github.com/jackretterer/starwars.git
 ```
 
 2. Install dependencies:
@@ -75,17 +75,3 @@ app/
 ├── starship/         # Starship detail pages
 └── page.tsx          # Home page with character listing
 ```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Acknowledgments
-
-- Data provided by [SWAPI](https://swapi.dev/)
-- Design inspired by modern Star Wars interfaces
-- Built with [Next.js](https://nextjs.org/)
