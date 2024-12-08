@@ -1,13 +1,22 @@
+'use client';
+
 import Link from "next/link";
 import type { Person } from "../lib/types";
+import { useCache } from "../contexts/CacheContext";
+import { useEffect } from "react";
 
 interface PersonCardProps {
   person: Person;
 }
 
 const PersonCard = ({ person }: PersonCardProps) => {
-  // Extract ID from URL
+  const { setPerson } = useCache();
   const id = person.url.split("/").filter(Boolean).pop();
+
+  // Cache the person data when the component mounts
+  useEffect(() => {
+    setPerson(person);
+  }, [person, setPerson]);
 
   return (
     <Link 

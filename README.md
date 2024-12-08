@@ -1,9 +1,6 @@
 # Star Wars Explorer
 
-A modern, responsive web application that provides an interactive interface for exploring the Star Wars universe using the SWAPI (Star Wars API).
-
-![Star Wars Explorer Screenshot]
-[Consider adding a screenshot of your app here]
+This repo is an interactive interface for exploring the Star Wars universe using the SWAPI (Star Wars API).
 
 ## Features
 
@@ -25,7 +22,7 @@ A modern, responsive web application that provides an interactive interface for 
 
 ## Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js (App Router)
 - **Language**: TypeScript
 - **Styling**: TailwindCSS
 - **Data**: SWAPI (Star Wars API)
@@ -75,3 +72,11 @@ app/
 ├── starship/         # Starship detail pages
 └── page.tsx          # Home page with character listing
 ```
+
+## Future Improvements
+
+- Add caching
+- Prefetch popular characters on homepage load
+- Add loading skeletons for better UX
+- Implement error boundaries for API failures
+- Add images for the characters

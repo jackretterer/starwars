@@ -2,8 +2,18 @@ import type { Person, PeopleResponse, Film, Vehicle, Starship, Planet } from './
 
 const BASE_URL = 'https://swapi.dev/api';
 
+// Cache duration in seconds
+const CACHE_DURATION = 60 * 60; // 1 hour
+
 export const fetchPeople = async (page = 1) => {
-  const response = await fetch(`${BASE_URL}/people/?page=${page}`);
+  const response = await fetch(
+    `${BASE_URL}/people/?page=${page}`,
+    {
+      next: {
+        revalidate: CACHE_DURATION,
+      },
+    }
+  );
   
   if (!response.ok) {
     throw new Error('Failed to fetch people');
@@ -16,7 +26,14 @@ export const fetchPerson = async (id: string) => {
   // Clean the ID - remove any non-numeric characters
   const cleanId = id.replace(/\D/g, '');
   
-  const response = await fetch(`${BASE_URL}/people/${cleanId}/`);
+  const response = await fetch(
+    `${BASE_URL}/people/${cleanId}/`,
+    {
+      next: {
+        revalidate: CACHE_DURATION,
+      },
+    }
+  );
   
   if (!response.ok) {
     throw new Error('Failed to fetch person');
@@ -26,7 +43,11 @@ export const fetchPerson = async (id: string) => {
 };
 
 export const fetchFilm = async (url: string) => {
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    next: {
+      revalidate: CACHE_DURATION,
+    },
+  });
   
   if (!response.ok) {
     throw new Error('Failed to fetch film');
@@ -36,7 +57,11 @@ export const fetchFilm = async (url: string) => {
 };
 
 export const fetchVehicle = async (url: string) => {
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    next: {
+      revalidate: CACHE_DURATION,
+    },
+  });
   
   if (!response.ok) {
     throw new Error('Failed to fetch vehicle');
@@ -46,7 +71,11 @@ export const fetchVehicle = async (url: string) => {
 };
 
 export const fetchStarship = async (url: string) => {
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    next: {
+      revalidate: CACHE_DURATION,
+    },
+  });
   
   if (!response.ok) {
     throw new Error('Failed to fetch starship');
@@ -56,7 +85,11 @@ export const fetchStarship = async (url: string) => {
 };
 
 export const fetchPlanet = async (url: string) => {
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    next: {
+      revalidate: CACHE_DURATION,
+    },
+  });
   
   if (!response.ok) {
     throw new Error('Failed to fetch planet');
@@ -77,7 +110,14 @@ export const fetchPlanetById = async (id: string) => {
 };
 
 export const searchPeople = async (query: string) => {
-  const response = await fetch(`${BASE_URL}/people/?search=${query}`);
+  const response = await fetch(
+    `${BASE_URL}/people/?search=${encodeURIComponent(query)}`,
+    {
+      next: {
+        revalidate: CACHE_DURATION,
+      },
+    }
+  );
   
   if (!response.ok) {
     throw new Error('Failed to search people');
