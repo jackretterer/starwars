@@ -12,7 +12,7 @@ export default async function HomePage({ searchParams }: PageProps) {
   const data = query ? await searchPeople(query) : await fetchPeople();
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 pb-12">
       <div className="flex flex-col items-center gap-4">
         <h1 className="text-4xl font-bold text-center bg-gradient-to-r from-yellow-400 to-yellow-200 bg-clip-text text-transparent">
           Star Wars Characters

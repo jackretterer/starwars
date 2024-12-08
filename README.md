@@ -2,6 +2,8 @@
 
 This repo is an interactive interface for exploring the Star Wars universe using the SWAPI (Star Wars API).
 
+[Live site](https://starwars-nine-pearl.vercel.app/)
+
 ## Features
 
 - **Character Directory**: Browse and search through Star Wars characters
